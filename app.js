@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const request = require("request");
@@ -35,6 +37,10 @@ app.post("/", function (req, res) {
 
   const apiKey = process.env.API_KEY;
   const id = process.env.UNIQUE_ID;
+
+  console.log("API_KEY:", process.env.API_KEY);
+console.log("UNIQUE_ID:", process.env.UNIQUE_ID);
+
 
   const url = `https:/us14.api.mailchimp.com/3.0/lists/${id}`;
 
